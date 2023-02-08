@@ -1,0 +1,118 @@
+/* ===== Nav Styles ===== */
+:root {
+    --nav-height:1em;
+    --nav-item-padding: 5px;
+    --bg-color: rgb(25, 25, 27);
+}
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 100;
+}
+
+nav {
+    font-family: 'Open Sans', sans-serif;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: var(--nav-height);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--bg-color);
+    width: 100%;
+    gap: 10px;
+    border-color: rgb(104, 105, 120);
+    border-width: 1px;
+    border-bottom-style: solid;
+}
+
+/* All nav links*/
+nav > a, nav > * :visited, nav > a:hover, nav > a:active {
+    color: white;
+    padding: var(--nav-item-padding);
+    text-align: center;
+    border-width: 5px;
+    border-radius: 3px;
+    flex-grow: 100%;
+    text-decoration: none;
+}
+
+nav > div {
+    padding: var(--nav-item-padding) / 4;
+    margin: var(--nav-item-padding) - var(--nav-item-padding) / 2;
+    margin-left: auto;
+}
+
+/*last nav element*/
+nav > div * {
+    margin-right: 5px;
+    margin-left: auto;
+}
+
+nav > button {
+    border-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--bg-color);
+    color: rgb(250, 250, 255);
+}
+
+nav > *:hover {
+    filter:brightness(85%);
+    filter:saturate(500%)
+}
+
+nav > *:active {
+    filter:brightness(50%);
+}
+
+
+body {
+    margin: 0px;
+    background-color: var(--bg-color);
+    color: white;
+}
+
+main {
+    padding-top: var(--nav-height);
+}
+
+/* ===== Star Button ===== */
+
+input.no-sel:checked + *.embodies-checked {
+    display:inline;
+    border: 2px groove transparent;
+    border-radius: 3px;
+}
+
+input.no-sel + * {
+    display:none;
+}
+
+input:checked + * + *.embodies-unchecked {
+    display: none;
+}
+
+input.no-sel {
+    opacity: 0;
+    position: absolute;
+    box-sizing: border-box;
+}
+
+input.no-sel:focus + *, input.no-sel:focus + * + *{
+    border: 2px groove rgb(39, 106, 231);
+    border-radius: 3px;
+}
+
+.no-sel {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
