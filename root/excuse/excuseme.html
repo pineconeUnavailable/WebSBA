@@ -1,12 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>unportfolio</title>
+
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Raleway:wght@100;200&family=Rubik:wght@300&display=swap"
+        rel="stylesheet">
+
+    <!--global styles-->
+    <link rel="stylesheet" href="../global/global.css">
+    <link rel="stylesheet" href="../global/asides/favorites.css">
+
+    <!--page-specific styles-->
+    
 </head>
+
 <body>
-    replace me when nav is mature
+    <nav>
+        <a href="../index/index.html">Home</a>
+        <a href="../excuse/excuseme.html">Excuses</a>
+        <a href="../excuse/excuseme.html">About Us</a>
+        <div></div>
+        <!-- <button id="btnFavorites" title="Favorites" aria-label="Show Favorites">&starf;</button> -->
+        <input type="checkbox" name="checky" class="no-sel" id="faves" aria-hidden="false" onclick="updateFaveVisibility(this)">
+        <label for="faves" class="embodies-checked no-sel">Hide Favorites&nbsp; &starf;</label>
+        <label for="faves" class="embodies-unchecked no-sel">Show Favorites&nbsp; &star;</label>
+    </nav>
+    <br>
+    <main>
+        <article>
+            <section>
+                <br>
+                <a id="generate">
+                    <br>
+                    <h1 style="width: 100%;">Generate Excuse</h1>
+                    <form action="">
+                        <label for="category">Excuse Category:</label>
+                        <select name="type" id="category">
+                            <option value="any">Any</option>
+                            <option value="family">Family</option>
+                            <option value="office">Office</option>
+                            <option value="children">Children</option>
+                            <option value="college">College</option>
+                            <option value="party">Party</option>
+                            <option value="funny">Funny</option>
+                            <option value="unbelievable">Unbelievable</option>
+                            <option value="developers">Developers</option>
+                            <option value="Gaming">Gaming</option>                            
+                        </select>
+                        <input type="submit" value="Generate">
+                    </form>
+                    <h3>&nbsp; Result</h3>
+                    <pre id="output" aria-hidden="true" style="display:inline-block; border-style: solid; margin:1px; border-color:rgb(41, 41, 73); white-space: pre-wrap;">[Excuse]</pre>
+                    <button onclick="addToFavorites()"><span style="color:green">+</span> Add to Favorites</button>
+                </a>
+            </section>
+
+    <aside class="right" id="favorites-paine">
+        <h2>Favorites</h2>
+        <ul id="favorites" onclick="handleFaveClick(event)">
+
+        </ul>
+    </aside>
+
+    <noscript>
+        <strong>This site requires javascript <em>but</em></strong>
+        <span>The javascript employed is succinct, readable, and auditable</span>
+        <a href="../global/asides/favorites.js">favorites.js</a>
+        <a href="../excuse/excuses.js">excuses.js</a>
+    </noscript>
+
+    <script src="../global/asides/favorites.js"></script>
+    <script src="./excuses.js"></script>
 </body>
+
 </html>
