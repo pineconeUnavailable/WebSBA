@@ -2,7 +2,7 @@ let excuseField = document.getElementById("excuse")
 var shareFunc = (id) => {
     if(id != 'favorites'){
         let excuse = faves.getFavoriteById(id);
-        excuseField.innerText = excuse.excuse;
+        excuseField.value = excuse.excuse;
     }
 }
 

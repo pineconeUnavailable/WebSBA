@@ -51,15 +51,20 @@ class Favorites {
     }
 
     addFavorite(favorite, dest) {
+        if(favorite == undefined){
+            return false;
+        }
+
         for(let elem of this.favorites) {
             if(elem.id == favorite.id) {
-                return;
+                return false;
             }
         }        
         this.favorites.push(favorite);
         if(dest) {
             favorite.render(dest)
         }
+        return true;
     }
 
     removeFavoriteById(favoriteId, dest) {
@@ -110,7 +115,7 @@ function handleFaveClick(event) {
         faves.removeFavoriteById(event.target.parentElement.getAttribute("id"), faveList);
     } else {
         //integrate with share.js for autofill integration
-        if(shareFunc) {
+        if(typeof shareFunc === 'function') {
             shareFunc(event.target.parentElement.getAttribute("id"));
         }
     }
