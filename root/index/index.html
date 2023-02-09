@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +10,75 @@
     <!--google fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Raleway:wght@100;200&family=Rubik:wght@300&display=swap" rel="stylesheet">  
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Raleway:wght@100;200&family=Rubik:wght@300&display=swap"
+        rel="stylesheet">
+
     <!--global styles-->
     <link rel="stylesheet" href="../global/global.css">
+    <link rel="stylesheet" href="../global/asides/favorites.css">
 
     <!--page-specific styles-->
-    <link rel="stylesheet" href="./index.css">
+
+    <style>
+        .centered,
+        h2 {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            display: inline-block;
+        }
+
+
+        a.link {
+            text-decoration: none;
+            color: rgb(71, 94, 249);
+        }
+
+        a.link.featured:hover,
+        a.link.featured:hover * {
+            filter: brightness(110%);
+        }
+
+
+        @keyframes hi {
+            0% {
+                filter: brightness(100%);
+                text-shadow: 0px 0px 0px black;
+                text-decoration: underline rgba(255, 255, 255, 0);
+            }
+
+            10% {
+                filter: brightness(150%);
+                text-shadow: 0px 0px 5px white;
+                text-decoration: underline rgba(255, 255, 255, .75);
+            }
+
+            100% {
+                filter: brightness(100%);
+                text-shadow: 0px 0px 0px black;
+                text-decoration: underline rgba(255, 255, 255, 0);
+            }
+        }
+
+        a:target {
+            animation: hi 1.5s ease;
+            animation-delay: 0.8s;
+            transform: translateY(20px);
+        }
+
+        img.featured {
+            width: 20%;
+        }
+
+        @media only screen and (min-width: 800px) {
+            img.featured {
+                width: 15%;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <nav>
         <a href="../index/index.html">Home</a>
@@ -24,41 +86,117 @@
         <a href="../excuse/excuseme.html">About Us</a>
         <div></div>
         <!-- <button id="btnFavorites" title="Favorites" aria-label="Show Favorites">&starf;</button> -->
-        <input type="checkbox" name="checky" class="no-sel" id="faves" aria-hidden="false">
+        <input type="checkbox" name="checky" class="no-sel" id="faves" aria-hidden="false" onclick="updateFaveVisibility(this)">
         <label for="faves" class="embodies-checked no-sel">Hide Favorites&nbsp; &starf;</label>
         <label for="faves" class="embodies-unchecked no-sel">Show Favorites&nbsp; &star;</label>
     </nav>
-
+    <br>
     <main>
         <article>
-            <aside class="left">
-                <h2>In this article</h2>
-                <ul>
-                    <li><a href="#theyGrrrrreat">Get Started</a></li>
-                    <li><a href="#theyGrrrrreat">Excuses Are great, Actually</a></li>
-                    <li><a href="#ufirst">Become Unrecognizable</a></li>
-                    <li><a href="#gou">Never Look Back</a></li>
-                    <li><a href="#nontoxic">Take The First Step </a></li>
-                </ul>
-            </aside>
-            <a id="theyGrrrrreat"><h1>Excuses are great, actually</h1></a>
             <section>
-                <h2>pendulum time</h2>
-                <div id="containerß">
-                    <div class="math label">math</div>
-                    <div class="physics label">physics</div>
-                  
-                    <canvas id="drawing_canvas"></canvas>
-                  </div>
+                <br>
+                <a id="getStarted">
+                    <br>
+                    <h1 class="centered" style="width: 100%;">Excuses are great, actually</h1>
+                    <div class="centered" style="width:100%">
+                        <a href="../excuse/excuseme.html" class="link featured">
+                            <span class="" style="color:rgb(196, 196, 62)">Get Started!</span> <br>
+                            <img style="border-radius: 5px;" src="lie.png" alt="image of the word lie" class="featured">
+                        </a>
+                    </div>
+                </a>
+
+                <a id="why">
+                    <br>
+                    <h2>Why Excuses?</h1>
+                </a>
+
+
+                <p>
+                    People have been making excuses to each other for trivial reasons based in convienience since the
+                    dawn of time. <br>
+                    <q>excuses destroying my family :(</q>
+                    <strong>This is the <a href="#tbl" title="Get Better Responses!">Wrong Response</a>!</strong>
+                    Thankfully, all thought has already been done for you, simply have a look at our table:
+                    <br>
+                    <br>
+                    <a id="tbl">
+                        <table>
+                            <header>
+                                <td><strong>Question</strong></td>
+                                <td><strong>Answer</strong></td>
+                            </header>
+                            <tr>
+                                <td><q>Why did you kick my dog?</q></td>
+                                <td><q>Oops</q></td>
+                            </tr>
+                            <tr>
+                                <td><q>Please stop smoking on the airplane</q></td>
+                                <td><q>no</q></td>
+                            </tr>
+                            <tr>
+                                <td><q>You are legally required to pay child support</q>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td><q>i am a free spirit of these lands. Begone from this place</q></td>
+                            </tr>
+                        </table>
+                    </a>
+                </p>
+            </section>
+            <section>
+                <a id="epic">
+                    <br>
+                    <h1>Become Unrecognizable</h1>
+                </a>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor reiciendis, ipsam ea veritatis rerum, temporibus voluptatem nostrum incidunt aspernatur ipsum facilis adipisci dolore! Ipsam expedita a, cupiditate ipsum eligendi nisi!</p>
+                
             </section>
 
+            <section>
+                <a id="cool">
+                    <br>
+                    <h1>Never Look Back</h1>
+                </a>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor reiciendis, ipsam ea veritatis rerum, temporibus voluptatem nostrum incidunt aspernatur ipsum facilis adipisci dolore! Ipsam expedita a, cupiditate ipsum eligendi nisi!</p>
+                
+            </section>
+
+            <section>
+                <a id="yeah">
+                    <br>
+                    <h1><a href="#getStarted">Take The First Step </a></h1>
+                </a>
+            </section>
+
+            <aside class="left">
+                <hr>
+                <h2>In this article</h2>
+                <ul>
+                    <li><a href="#getStarted">Get Started</a></li>
+                    <li><a href="#why">Why Excuses?</a></li>
+                    <li><a href="#epic">Become Unrecognizable</a></li>
+                    <li><a href="#cool">Never Look Back</a></li>
+                    <li><a href="#yeah">Take The First Step </a></li>
+                </ul>
+                <hr>
+            </aside>
         </article>
     </main>
 
-    <aside class="right">
+    <aside class="right" id="favorites-paine">
         <h2>Favorites</h2>
+        <ul id="favorites" onclick="handleFaveClick(event)">
+
+        </ul>
     </aside>
 
-    
+    <noscript>
+        <strong>This site requires javascript <em>but</em></strong>
+        <span>The javascript employed is succinct, readable, and auditable</span>
+        <a href="../global/asides/favorites.js">favorites.js</a>
+        <a href="../excuse/excuses.js">excuses.js</a>
+    </noscript>
+
+    <script src="../global/asides/favorites.js"></script>
 </body>
+
 </html>
