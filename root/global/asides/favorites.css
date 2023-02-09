@@ -1,0 +1,17 @@
+.fave > button{
+    color:red;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 0px;
+
+    padding: 0px;
+    height: 15px;
+    width: 15px;
+    border-radius: 2px;
+    border-width: 1px;
+    background-color: black;
+}
+
+.fave > button:hover {
+    background-color:rgb(26, 26, 26);
+}
