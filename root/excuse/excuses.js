@@ -39,6 +39,9 @@ async function handleQueryParam(type) {
 async function addToFavorites() {
     await result.then(value => {
         faves.addFavorite(value, faveList)
+
+        faveCheck.checked = true;
+        updateFaveVisibility(faveCheck);
     })
 }
 

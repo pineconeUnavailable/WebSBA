@@ -19,7 +19,11 @@
     <link rel="stylesheet" href="../global/asides/favorites.css">
 
     <!--page-specific styles-->
-    
+    <style>
+        input[aria-readonly="true"]{
+            background-color: gray;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,7 +32,6 @@
         <a href="../excuse/excuseme.html">Excuses</a>
         <a href="../share/share.html">Share</a>
         <div></div>
-        <!-- <button id="btnFavorites" title="Favorites" aria-label="Show Favorites">&starf;</button> -->
         <input type="checkbox" name="checky" class="no-sel" id="faves" aria-hidden="false" onclick="updateFaveVisibility(this)">
         <label for="faves" class="embodies-checked no-sel">Hide Favorites&nbsp; &starf;</label>
         <label for="faves" class="embodies-unchecked no-sel">Show Favorites&nbsp; &star;</label>
@@ -40,26 +43,17 @@
                 <br>
                 <a id="generate">
                     <br>
-                    <h1 style="width: 100%;">Generate Excuse</h1>
-                    <form action="">
-                        <label for="category">Excuse Category:</label>
-                        <select name="type" id="category">
-                            <option value="any">Any</option>
-                            <option value="family">Family</option>
-                            <option value="office">Office</option>
-                            <option value="children">Children</option>
-                            <option value="college">College</option>
-                            <option value="party">Party</option>
-                            <option value="funny">Funny</option>
-                            <option value="unbelievable">Unbelievable</option>
-                            <option value="developers">Developers</option>
-                            <option value="Gaming">Gaming</option>                            
-                        </select>
-                        <input type="submit" value="Generate">
+                    <h1 style="width: 100%;">Thanks for voting for your favorite!</h1>
+                    <p>Let us know your email if you want us to respond!</p>
+                    <form action="thankyou.html">                        
+                        <br>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email" required="required" pattern="^[^@]+@[^@]+\.[^@]+$">
+                        <input type="hidden" name="excuse" id="excuse" required="required" aria-readonly="true" readonly></input>
+                        <input type="submit" value="Submit">
+                        <br>
+                        <span style="font-size: xx-small;"><i>(excuse already saved!)</i></span>
                     </form>
-                    <h3>&nbsp; Result</h3>
-                    <pre id="output" aria-hidden="true" style="display:inline-block; border-style: solid; margin:1px; border-color:rgb(41, 41, 73); white-space: pre-wrap;">[Excuse]</pre>
-                    <button onclick="addToFavorites()"><span style="color:green">+</span> Add to Favorites</button>
                 </a>
             </section>
 
@@ -78,7 +72,7 @@
     </noscript>
 
     <script src="../global/asides/favorites.js"></script>
-    <script src="./excuses.js"></script>
+    <script src="../share/withus.js"></script>
 </body>
 
 </html>

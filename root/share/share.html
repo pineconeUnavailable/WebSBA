@@ -40,27 +40,24 @@
                 <br>
                 <a id="generate">
                     <br>
-                    <h1 style="width: 100%;">Generate Excuse</h1>
-                    <form action="">
-                        <label for="category">Excuse Category:</label>
-                        <select name="type" id="category">
-                            <option value="any">Any</option>
-                            <option value="family">Family</option>
-                            <option value="office">Office</option>
-                            <option value="children">Children</option>
-                            <option value="college">College</option>
-                            <option value="party">Party</option>
-                            <option value="funny">Funny</option>
-                            <option value="unbelievable">Unbelievable</option>
-                            <option value="developers">Developers</option>
-                            <option value="Gaming">Gaming</option>                            
+                    <h1 style="width: 100%;">Share Excuse</h1>
+                    <form action="withus.html" onsubmit="return submitHandler(this)">
+                        <label for="platform">Share to:</label>
+                        <select name="type" id="platform">
+                            <option value="twitter">Twitter</option>
+                            <option value="us">Our Servers</option>
                         </select>
-                        <input type="submit" value="Generate">
+                        <br>
+                        <label for="excuse">Excuse</label>
+                        <br>
+                        <textarea type="text" name="excuse" id="excuse" required="required"></textarea>
+                        <br>
+                        <input type="submit" value="Share">
                     </form>
-                    <h3>&nbsp; Result</h3>
-                    <pre id="output" aria-hidden="true" style="display:inline-block; border-style: solid; margin:1px; border-color:rgb(41, 41, 73); white-space: pre-wrap;">[Excuse]</pre>
-                    <button onclick="addToFavorites()"><span style="color:green">+</span> Add to Favorites</button>
                 </a>
+            </section>
+            <section>
+                <p style="font-size:xx-small;" id="tip"><i>&nbsp;&nbsp;Tip: Click an excuse from your favorites to autofill it</i></p>
             </section>
 
     <aside class="right" id="favorites-paine">
@@ -78,7 +75,7 @@
     </noscript>
 
     <script src="../global/asides/favorites.js"></script>
-    <script src="./excuses.js"></script>
+    <script src="../share/share.js"></script>
 </body>
 
 </html>

@@ -76,7 +76,14 @@ class Favorites {
                 break;
             }
         }
-        
+    }
+
+    getFavoriteById(favoriteId){
+        for(let i = 0; i < this.favorites.length; i++) {
+            if(this.favorites[i].id == favoriteId){
+                return this.favorites[i];
+            }
+        }
     }
 }
 
@@ -100,7 +107,12 @@ function getCookieValue(key) {
 //existing hooks
 function handleFaveClick(event) {
     if(event.target.tagName == "BUTTON") {
-        faves.removeFavoriteById(event.target.parentElement.getAttribute("id"), faveList)
+        faves.removeFavoriteById(event.target.parentElement.getAttribute("id"), faveList);
+    } else {
+        //integrate with share.js for autofill integration
+        if(shareFunc) {
+            shareFunc(event.target.parentElement.getAttribute("id"));
+        }
     }
 }
 
@@ -119,5 +131,5 @@ console.log("[Favorites]: Done!")
 updateFaveVisibility(faveCheck)
 
 window.onbeforeunload = () => {
-    document.cookie = "favorites=" + encodeURIComponent(JSON.stringify(faves)) + "; SameSite=Strict";
+    document.cookie = "favorites=" + encodeURIComponent(JSON.stringify(faves)) + "; SameSite=Strict; path=/;";
 };

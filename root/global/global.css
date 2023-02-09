@@ -114,6 +114,15 @@ input.no-sel:focus + *.embodies-checked, input.no-sel:focus + * + *{
     user-select: none;
 }
 
+/* ===== General =====*/
+
 *[aria-hidden="true"] {
     display: none;
+}
+
+.centered, h2 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: inline-block;
 }
